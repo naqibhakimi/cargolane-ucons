@@ -89,9 +89,9 @@ export default function UnderConstruction() {
             }}
           />
         </div>
-        <p className="text-sm text-muted-foreground">
+        {/* <p className="text-sm text-muted-foreground">
           Progress: 90% — the last 10% is &quot;almost done&quot; (we&apos;ve been saying that since 2023)
-        </p>
+        </p> */}
 
         {/* CTA */}
         <p className="mt-8 text-center text-sm text-muted-foreground">
