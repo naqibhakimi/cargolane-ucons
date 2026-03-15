@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 20% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+    --primary: 199 96% 39%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 15% 96%;
+    --secondary-foreground: 220 20% 15%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 38 100% 50%;
+    --accent-foreground: 220 20% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 199 96% 39%;
+  }
+
+  .dark {
+    --background: 222 20% 7%;
+    --foreground: 210 20% 95%;
+    --card: 222 18% 10%;
+    --card-foreground: 210 20% 95%;
+    --popover: 222 18% 10%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 199 80% 52%;
+    --primary-foreground: 222 20% 7%;
+    --secondary: 220 14% 14%;
+    --secondary-foreground: 210 20% 92%;
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 15% 65%;
+    --accent: 38 95% 55%;
+    --accent-foreground: 222 20% 7%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 199 80% 52%;
+  }
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 222 20% 7%;
+    --foreground: 210 20% 95%;
+    --card: 222 18% 10%;
+    --card-foreground: 210 20% 95%;
+    --primary: 199 80% 52%;
+    --secondary: 220 14% 14%;
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 15% 65%;
+    --accent: 38 95% 55%;
+    --border: 220 14% 18%;
+    --ring: 199 80% 52%;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+}
+
+@keyframes tapeShimmer {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progressJitter {
+  0%, 100% { width: 90%; }
+  25% { width: 91%; }
+  75% { width: 89%; }
 }
