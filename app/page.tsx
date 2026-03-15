@@ -94,9 +94,9 @@ export default function UnderConstruction() {
         </p> */}
 
         {/* CTA */}
-        <p className="mt-8 text-center text-sm text-muted-foreground">
+        {/* <p className="mt-8 text-center text-sm text-muted-foreground">
           Check back soon. Or bring snacks. We like snacks. 🍕
-        </p>
+        </p> */}
       </main>
 
     </div>
